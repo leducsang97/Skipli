@@ -1,0 +1,38 @@
+# Coding Challenge
+
+Create a simple login application that comprises of a front-end, a back-end, and database (Firebase). Use the code editor of your choice.
+
+Before you begin, make sure to sign up for free accounts on these services:
+firebase (https://firebase.google.com) (for database)
+twilio (https://www.twilio.com) (for texting)
+
+If you have any questions, please email careers@skiplinow.com and provide as much details as possible.
+
+
+-------- Front-end --------
+
+To create the front-end, follow these initial steps
+
+Step 1: Use the Create-React-App (https://github.com/facebook/create-react-app) to create a skeleton React project.
+
+Step 2: Create a form that includes two input fields (phone number and access code). These fields don't have to be fancy, no styling is acceptable. To create a simple working React form, check out this tutorial: https://medium.com/@agoiabeladeyemi/the-complete-guide-to-forms-in-react-d2ba93f32825
+
+The idea is for the customer to enter their phone number in the first input field and submit. The back-end will generate a random 6-digit access code then save that access code to the provided phone number already stored in the database. Once saved, the access code is texted to the phone number.
+
+Step 3: The customer receives the access code via text and enters it to the second input field. The front-end now needs to validate that access code by sending it and the phone number to the back-end. If the code matches with the access code saved in the database, then return a success message to the front end.
+
+-------- Back-end --------
+
+You must create an Express backend. Follow this simple tutorial to start one within 5 minutes (https://medium.com/@onejohi/building-a-simple-rest-api-with-nodejs-and-express-da6273ed7ca9)
+
+You can create as many functions in the back-end as you want, but the back-end must have these two functions:
+
+(POST) CreateNewAccessCode
+Parameters: phoneNumber
+Return: a random 6-digit access code
+Other requirement: save this access code to the phoneNumber in the database
+
+(POST) ValidateAccessCode
+Parameters: accessCode, phoneNumber
+Return: { success: true }
+Other requirement: set the access code to empty string once validation is complete
